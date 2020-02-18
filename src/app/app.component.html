@@ -54,12 +54,11 @@
         <div class="form-group">
           <textarea
             name="questionAnswer"
+            ngModel
             class="form-control"
             rows="3"
-            [(ngModel)]="answer"
           ></textarea>
         </div>
-        <p>Your reply: {{ answer }}</p>
         <div class="radio" *ngFor="let gender of genders">
           <label>
             <input
@@ -76,6 +75,16 @@
           Submit
         </button>
       </form>
+    </div>
+  </div>
+  <hr />
+  <div class="row" *ngIf="submitted === true">
+    <div class="col-xs-12">
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Secret Question: {{ user.secretQuestion }}</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
     </div>
   </div>
 </div>
